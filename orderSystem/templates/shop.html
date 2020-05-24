@@ -1,0 +1,144 @@
+{% extends 'base.html'%}
+
+{%block content%}
+{% load static %}
+<style>
+    .col-md-3 {
+        display: inline-block;
+        margin-left: -4px;
+    }
+
+    .carousel-indicators .active {
+        background-color: blue;
+    }
+
+    .col-md-3 img {
+        max-width: 227px;
+        height: 242px;
+    }
+
+    body .carousel-indicator li {
+        background-color: blue;
+    }
+
+    body .carousel-indicators {
+        bottom: 0;
+    }
+
+    body .carousel-control-prev-icon,
+    body .carousel-control-next-icon {
+        background-color: blue;
+    }
+
+    body .no-padding {
+        padding-left: 0;
+        padding-right: 0;
+    }
+</style>
+
+<div class="container">
+    <div id="demo" class="carousel slide my-3" data-ride="carousel">
+        <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+
+            <!-- {% for i in range%} -->
+            <li data-target="#demo" data-slide-to="4"></li>
+            <!-- {% endfor %} -->
+        </ul>
+
+        <!--Slideshow starts here -->
+        <div class="container carousel-inner no-padding">
+
+            <div class="carousel-item active">
+               
+
+                <!-- {% for i in products%} -->
+
+                <div class="col-xs-3 col-sm-3 col-md-3">
+                    <div class="card" style="width: 18rem;">
+                        <img src='/media/{{products.0.image}}' class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h6 class="card-title" id="n0">{{products.0.productName}}</h6>
+                            <p class="card-text">{{products.0.desc}}</p>
+                            <span id="div0">
+                            <button id="0" class="btn btn-primary cart">Add to cart</button>
+                        </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-3 col-sm-3 col-md-3">
+                    <div class="card" style="width: 18rem;">
+                        <img src='/media/{{products.1.image}}' class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h6 class="card-title" id="n1">{{products.1.productName}}</h6>
+                            <p class="card-text">{{products.1.desc}}</p>
+                            <span id="div1">
+                            <button id="1" class="btn btn-primary cart">Add to cart</button>
+                        </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-3 col-sm-3 col-md-3">
+                    <div class="card" style="width: 18rem;">
+                        <img src='/media/{{products.2.image}}' class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h6 class="card-title" id="n2">{{products.2.productName}}</h6>
+                            <p class="card-text">{{products.2.desc}}</p>
+                            <span id="div2">
+                            <button id="2" class="btn btn-primary cart">Add to cart</button>
+                        </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-3 col-sm-3 col-md-3">
+                    <div class="card" style="width: 18rem;">
+                        <img src='/media/{{products.3.image}}' class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h6 class="card-title" id="n3">{{products.3.productName}}</h6>
+                            <p class="card-text">{{products.3.desc}}</p>
+                            <span id="div3">
+                            <button id="3" class="btn btn-primary cart">Add to cart</button>
+                        </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-3 col-sm-3 col-md-3">
+                    <div class="card" style="width: 18rem;">
+                        <img src='/media/{{products.4.image}}' class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h6 class="card-title" id="n4">{{products.4.productName}}</h6>
+                            <p class="card-text">{{products.4.desc}}</p>
+                            <span id="div4">
+                            <button id="4" class="btn btn-primary cart">Add to cart</button>
+                        </span>
+                        </div>
+                    </div>
+                </div>
+                <!-- {% if forloop.counter|divisibleby:4 and forloop.counter > 0 and not forloop.last%} -->
+            </div>
+            <div class="carousel-item">
+                <!-- {% endif %}
+
+                {% endfor %} -->
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+    <!-- left and right controls for the slide -->
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </a>
+
+
+</div>
+
+
+
+{% endblock%}
